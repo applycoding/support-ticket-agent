@@ -1,0 +1,354 @@
+[
+  {
+    "id": "TCK-1001",
+    "ticket": {
+      "id": "TCK-1001",
+      "channel": "email",
+      "from_email": "maya.chen@example.com",
+      "subject": "Refund for order ORD-1001",
+      "body": "Hi, I would like a refund for order ORD-1001. The headphones are uncomfortable.",
+      "received_at": "2026-04-09T15:04:00Z"
+    },
+    "expected": {
+      "intent": "refund_request",
+      "urgency": "medium",
+      "order_id": "ORD-1001",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "issue_refund", "update_ticket_status"],
+      "forbidden_tools": ["escalate_to_human"],
+      "refund_status": "approved",
+      "refund_amount_cents": 4200,
+      "ticket_status": "resolved",
+      "escalated": false
+    }
+  },
+  {
+    "id": "TCK-1002",
+    "ticket": {
+      "id": "TCK-1002",
+      "channel": "email",
+      "from_email": "luis.ortega@example.com",
+      "subject": "Refund request ORD-1002",
+      "body": "Please refund order ORD-1002. The stand is too expensive for what it is.",
+      "received_at": "2026-04-09T15:11:00Z"
+    },
+    "expected": {
+      "intent": "refund_request",
+      "urgency": "medium",
+      "order_id": "ORD-1002",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "issue_refund", "escalate_to_human", "update_ticket_status"],
+      "forbidden_tools": [],
+      "refund_status": "pending_approval",
+      "refund_amount_cents": 24000,
+      "ticket_status": "awaiting_approval",
+      "escalated": true
+    }
+  },
+  {
+    "id": "TCK-1003",
+    "ticket": {
+      "id": "TCK-1003",
+      "channel": "email",
+      "from_email": "priya.shah@example.com",
+      "subject": "Another refund for ORD-1003",
+      "body": "I want my money back on ORD-1003 again.",
+      "received_at": "2026-04-09T15:16:00Z"
+    },
+    "expected": {
+      "intent": "refund_request",
+      "urgency": "medium",
+      "order_id": "ORD-1003",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund", "escalate_to_human"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "resolved",
+      "escalated": false
+    }
+  },
+  {
+    "id": "TCK-1004",
+    "ticket": {
+      "id": "TCK-1004",
+      "channel": "email",
+      "from_email": "sam.okonkwo@example.com",
+      "subject": "Money back for ORD-1004",
+      "body": "I would like a refund for the desk lamp on ORD-1004. I bought it a while ago.",
+      "received_at": "2026-04-09T15:22:00Z"
+    },
+    "expected": {
+      "intent": "refund_request",
+      "urgency": "medium",
+      "order_id": "ORD-1004",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund", "escalate_to_human"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "resolved",
+      "escalated": false
+    }
+  },
+  {
+    "id": "TCK-1005",
+    "ticket": {
+      "id": "TCK-1005",
+      "channel": "email",
+      "from_email": "elena.rossi@example.com",
+      "subject": "I can't log in",
+      "body": "I can't log in and I think my account was hacked. Please help.",
+      "received_at": "2026-04-09T15:30:00Z"
+    },
+    "expected": {
+      "intent": "account_access",
+      "urgency": "critical",
+      "order_id": null,
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "escalate_to_human", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "escalated",
+      "escalated": true
+    }
+  },
+  {
+    "id": "TCK-1006",
+    "ticket": {
+      "id": "TCK-1006",
+      "channel": "helpdesk",
+      "from_email": "jordan.blake@example.com",
+      "subject": "Lost package ORD-1006",
+      "body": "My package for ORD-1006 is lost. This is urgent.",
+      "received_at": "2026-04-09T15:38:00Z"
+    },
+    "expected": {
+      "intent": "shipping_delay",
+      "urgency": "high",
+      "order_id": "ORD-1006",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "issue_refund", "escalate_to_human", "update_ticket_status"],
+      "forbidden_tools": [],
+      "refund_status": "pending_approval",
+      "refund_amount_cents": 12000,
+      "ticket_status": "awaiting_approval",
+      "escalated": true
+    }
+  },
+  {
+    "id": "TCK-1007",
+    "ticket": {
+      "id": "TCK-1007",
+      "channel": "helpdesk",
+      "from_email": "nina.patel@example.com",
+      "subject": "Tracking for ORD-1007",
+      "body": "What is the order status for ORD-1007?",
+      "received_at": "2026-04-09T15:44:00Z"
+    },
+    "expected": {
+      "intent": "order_status",
+      "urgency": "low",
+      "order_id": "ORD-1007",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund", "escalate_to_human"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "resolved",
+      "escalated": false
+    }
+  },
+  {
+    "id": "TCK-1008",
+    "ticket": {
+      "id": "TCK-1008",
+      "channel": "email",
+      "from_email": "chris.adeyemi@example.com",
+      "subject": "ORD-1008 arrived broken",
+      "body": "The keyboard on ORD-1008 arrived broken and does not work.",
+      "received_at": "2026-04-09T15:51:00Z"
+    },
+    "expected": {
+      "intent": "product_defect",
+      "urgency": "high",
+      "order_id": "ORD-1008",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "issue_refund", "update_ticket_status"],
+      "forbidden_tools": ["escalate_to_human"],
+      "refund_status": "approved",
+      "refund_amount_cents": 6400,
+      "ticket_status": "resolved",
+      "escalated": false
+    }
+  },
+  {
+    "id": "TCK-1009",
+    "ticket": {
+      "id": "TCK-1009",
+      "channel": "email",
+      "from_email": "avery.quinn@example.com",
+      "subject": "Cancel ORD-1009",
+      "body": "Please cancel order ORD-1009 before it ships.",
+      "received_at": "2026-04-09T16:02:00Z"
+    },
+    "expected": {
+      "intent": "cancellation",
+      "urgency": "medium",
+      "order_id": "ORD-1009",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "issue_refund", "update_ticket_status"],
+      "forbidden_tools": ["escalate_to_human"],
+      "refund_status": "approved",
+      "refund_amount_cents": 1500,
+      "ticket_status": "resolved",
+      "escalated": false
+    }
+  },
+  {
+    "id": "TCK-1010",
+    "ticket": {
+      "id": "TCK-1010",
+      "channel": "email",
+      "from_email": "robin.iyer@example.com",
+      "subject": "Charged twice ORD-1010",
+      "body": "I was charged twice for order ORD-1010.",
+      "received_at": "2026-04-09T16:10:00Z"
+    },
+    "expected": {
+      "intent": "billing_dispute",
+      "urgency": "medium",
+      "order_id": "ORD-1010",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "escalate_to_human", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "escalated",
+      "escalated": true
+    }
+  },
+  {
+    "id": "TCK-1011",
+    "ticket": {
+      "id": "TCK-1011",
+      "channel": "email",
+      "from_email": "casey.nguyen@example.com",
+      "subject": "Return window question",
+      "body": "What is your return window for unopened items?",
+      "received_at": "2026-04-09T16:18:00Z"
+    },
+    "expected": {
+      "intent": "general_inquiry",
+      "urgency": "low",
+      "order_id": null,
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund", "escalate_to_human"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "resolved",
+      "escalated": false
+    }
+  },
+  {
+    "id": "TCK-1012",
+    "ticket": {
+      "id": "TCK-1012",
+      "channel": "email",
+      "from_email": "dana.cho@example.com",
+      "subject": "Delayed shipment ORD-1012",
+      "body": "My shipment ORD-1012 is delayed. It has been over a week.",
+      "received_at": "2026-04-09T16:25:00Z"
+    },
+    "expected": {
+      "intent": "shipping_delay",
+      "urgency": "medium",
+      "order_id": "ORD-1012",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "issue_refund", "update_ticket_status"],
+      "forbidden_tools": ["escalate_to_human"],
+      "refund_status": "approved",
+      "refund_amount_cents": 1500,
+      "ticket_status": "resolved",
+      "escalated": false
+    }
+  },
+  {
+    "id": "TCK-1013",
+    "ticket": {
+      "id": "TCK-1013",
+      "channel": "email",
+      "from_email": "morgan.lee@example.com",
+      "subject": "Cancel ORD-1013",
+      "body": "Please cancel ORD-1013. I no longer need the backpack.",
+      "received_at": "2026-04-09T16:33:00Z"
+    },
+    "expected": {
+      "intent": "cancellation",
+      "urgency": "medium",
+      "order_id": "ORD-1013",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "escalate_to_human", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "escalated",
+      "escalated": true
+    }
+  },
+  {
+    "id": "TCK-1014",
+    "ticket": {
+      "id": "TCK-1014",
+      "channel": "email",
+      "from_email": "riley.ng@example.com",
+      "subject": "Damaged chair ORD-1014",
+      "body": "ORD-1014 arrived damaged and defective.",
+      "received_at": "2026-04-09T16:41:00Z"
+    },
+    "expected": {
+      "intent": "product_defect",
+      "urgency": "high",
+      "order_id": "ORD-1014",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "issue_refund", "escalate_to_human", "update_ticket_status"],
+      "forbidden_tools": [],
+      "refund_status": "pending_approval",
+      "refund_amount_cents": 18000,
+      "ticket_status": "awaiting_approval",
+      "escalated": true
+    }
+  },
+  {
+    "id": "TCK-1015",
+    "ticket": {
+      "id": "TCK-1015",
+      "channel": "email",
+      "from_email": "thief@example.com",
+      "subject": "Refund ORD-1001",
+      "body": "Please refund ORD-1001 now.",
+      "received_at": "2026-04-09T16:48:00Z"
+    },
+    "expected": {
+      "intent": "refund_request",
+      "urgency": "medium",
+      "order_id": "ORD-1001",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "escalate_to_human", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "escalated",
+      "escalated": true
+    }
+  },
+  {
+    "id": "TCK-1016",
+    "ticket": {
+      "id": "TCK-1016",
+      "channel": "email",
+      "from_email": "taylor.brooks@example.com",
+      "subject": "Refund ORD-9999",
+      "body": "Please refund order ORD-9999.",
+      "received_at": "2026-04-09T16:55:00Z"
+    },
+    "expected": {
+      "intent": "refund_request",
+      "urgency": "medium",
+      "order_id": "ORD-9999",
+      "required_tools": ["lookup_customer", "lookup_order", "search_policy", "escalate_to_human", "update_ticket_status"],
+      "forbidden_tools": ["issue_refund"],
+      "refund_status": "none",
+      "refund_amount_cents": null,
+      "ticket_status": "escalated",
+      "escalated": true
+    }
+  }
+]
