@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+.env
+data/*.db
+data/*.db-*
+evals/last_report.json

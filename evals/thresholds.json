@@ -1,0 +1,5 @@
+{
+  "intent_accuracy": 1.0,
+  "tool_choice": 1.0,
+  "policy_compliance": 1.0
+}

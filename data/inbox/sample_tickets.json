@@ -1,0 +1,50 @@
+[
+  {
+    "id": "TCK-1001",
+    "channel": "email",
+    "from_email": "maya.chen@example.com",
+    "subject": "Refund for order ORD-1001",
+    "body": "Hi, I would like a refund for order ORD-1001. The headphones are uncomfortable.",
+    "received_at": "2026-04-09T15:04:00Z"
+  },
+  {
+    "id": "TCK-1002",
+    "channel": "email",
+    "from_email": "luis.ortega@example.com",
+    "subject": "Refund request ORD-1002",
+    "body": "Please refund order ORD-1002. The stand is too expensive for what it is.",
+    "received_at": "2026-04-09T15:11:00Z"
+  },
+  {
+    "id": "TCK-1005",
+    "channel": "email",
+    "from_email": "elena.rossi@example.com",
+    "subject": "I can't log in",
+    "body": "I can't log in and I think my account was hacked. Please help.",
+    "received_at": "2026-04-09T15:30:00Z"
+  },
+  {
+    "id": "TCK-1006",
+    "channel": "helpdesk",
+    "from_email": "jordan.blake@example.com",
+    "subject": "Lost package ORD-1006",
+    "body": "My package for ORD-1006 is lost. This is urgent.",
+    "received_at": "2026-04-09T15:38:00Z"
+  },
+  {
+    "id": "TCK-1008",
+    "channel": "email",
+    "from_email": "chris.adeyemi@example.com",
+    "subject": "ORD-1008 arrived broken",
+    "body": "The keyboard on ORD-1008 arrived broken and does not work.",
+    "received_at": "2026-04-09T15:51:00Z"
+  },
+  {
+    "id": "TCK-1011",
+    "channel": "email",
+    "from_email": "casey.nguyen@example.com",
+    "subject": "Return window question",
+    "body": "What is your return window for unopened items?",
+    "received_at": "2026-04-09T16:18:00Z"
+  }
+]
